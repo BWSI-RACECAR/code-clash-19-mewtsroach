@@ -30,15 +30,13 @@ class Solution:
         # type m: int
         # type n: int
         # return: int
-        steps = n + m - 2
-        down_steps = m - 1
-        res = 1
+        grid = [[1 for _ in range(n)] for _ in range(m)]
 
-        for i in range(1, down_steps):
-            res *= (steps - down_steps + i)/i
+        for i in range(1,m):
+            for j in range(1,n):
+                grid[i][j] = grid[i-1][j] + grid[i][j-1]
 
-        return res
-
+        return grid[-1][-1]
 
 def main():
     num1 = int(input())
