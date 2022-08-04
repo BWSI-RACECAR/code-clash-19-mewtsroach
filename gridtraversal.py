@@ -34,7 +34,7 @@ class Solution:
         down_steps = m - 1
         res = 1
 
-        for i in range(0, down_steps-1):
+        for i in range(1, down_steps):
             res *= (steps - down_steps + i)/i
 
         return res
